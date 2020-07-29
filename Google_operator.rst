@@ -37,6 +37,9 @@ el json.
 Por último, actualizar la ruta al archivo credenciales en el archivo google_operators.py. Debajo de los imports
 se encuentra declarada la variable creds_path, simplemente cambiar la que figure por la ubicación del json descargado
 
+Se debe actualizar tambien la ruta de pickle. Pickle es un archivo que guarda la ultima autorización, por lo que acelerá
+la siguiente. El archivo debe tener una extensión .pickle
+
 Operators
 ---------
 

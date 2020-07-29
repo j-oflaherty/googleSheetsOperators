@@ -14,7 +14,9 @@ import pandas as pd
 from sqlalchemy import text
 from datetime import datetime
 
+## UPDATE PATHS
 creds_path = '/home/julianoflaherty/.credenciales/client_secret_583206691909-5lqm591rsvbnc3ooagfpv6kiglsg9emo.apps.googleusercontent.com.json'
+pickle_path = '/home/julianoflaherty/.credenciales/sheets_token.pickle'
 
 class Spreadsheet:
 
@@ -30,8 +32,8 @@ class Spreadsheet:
         creds = None
 
         # See if auth already exists
-        if os.path.exists('/home/julianoflaherty/.credenciales/sheets_token.pickle'):
-            with open('/home/julianoflaherty/.credenciales/sheets_token.pickle', 'rb') as token:
+        if os.path.exists(pickle_path):
+            with open(pickle_path, 'rb') as token:
                 creds = pickle.load(token)
 
         # If it doesn't let's the user authorize
@@ -39,14 +41,13 @@ class Spreadsheet:
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
             else:
-                ## UPDATE CREDENTIALS PATH!!
                 flow = InstalledAppFlow.from_client_secrets_file(
                     creds_path,
                     SCOPES)
                 creds = flow.run_local_server(port=0)
 
             # saves auth for future uses
-            with open('/home/julianoflaherty/.credenciales/sheets_token.pickle', 'wb') as token:
+            with open(pickle_path, 'wb') as token:
                 pickle.dump(creds, token)
 
         service = build(serviceName='sheets', version='v4', credentials=creds)
