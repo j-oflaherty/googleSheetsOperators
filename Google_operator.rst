@@ -31,7 +31,7 @@ Es neceserio crear un `proyecto de google <https://console.developers.google.com
 y de google sheets. En la pestaña de credenciales, generar una nueva credencial del tipo *OAuth 2.0 Client ID* y descargar
 el json.
 
-.. image:: creds.png
+.. image:: docs/creds.png
    :align: center
 
 Por último, actualizar la ruta al archivo credenciales en el archivo google_operators.py. Debajo de los imports
