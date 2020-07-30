@@ -34,11 +34,21 @@ el json.
 .. image:: docs/creds.png
    :align: center
 
-Por último, actualizar la ruta al archivo credenciales en el archivo google_operators.py. Debajo de los imports
-se encuentra declarada la variable creds_path, simplemente cambiar la que figure por la ubicación del json descargado
 
-Se debe actualizar tambien la ruta de pickle. Pickle es un archivo que guarda la ultima autorización, por lo que acelerá
+Por último, **actualizar la ruta al archivo credenciales** en el archivo google_operators.py. Debajo de los imports
+se encuentra declarada la variable creds_path, simplemente cambiar la que figure por la ubicación del json descargado. 
+Se debe **actualizar tambien la ruta de pickle**. Pickle es un archivo que guarda la ultima autorización, por lo que acelerá
 la siguiente. El archivo debe tener una extensión .pickle
+
+Puede ser una buena práctica crear una carpeta oculta donde guardar estos archivos. Simplemente nombrarla con un punto al inicio. Para verla desde el visualizador de archivos apretar crtl+h.
+
+.. code-block:: python
+   
+   # dags/operators/extraction/google_operator.py
+   
+   creds_path = 'absolute-path'
+   pickle-path = 'absolute-path'
+
 
 Operators
 ---------
