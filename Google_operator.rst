@@ -98,7 +98,7 @@ Parámetros (además de los básicos de un operador):
 +-------------------+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | booleanize        | List [database_names]             | Columnas de tipo Yes/No; True/False que se quieran cargar como variables booleanas.                                                   |
 +-------------------+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| dates             | {'Database Name': 'format'}       | Columnas con fechas. Consultar `formatos disponibles <https://docs.python.org/3.4/library/datetime.html#strftime-strptime-behavior>`_ |
+| dates             | {'Database Name': 'format'}       | Columnas con fechas. Consultar `formatos disponibles <https://strftime.org/>`_ |
 +-------------------+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 GoogleSheetsUpdateTable
